@@ -1,0 +1,582 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GTA 6 Online Hub – Secrets, Guides, Karte und Community.">
+<title>GTA 6 Online Hub</title>
+
+<style>
+:root {
+  --bg:#080b18;
+  --panel:#151a30;
+  --pink:#ff4fa3;
+  --cyan:#43eee0;
+  --muted:#b5bdd1;
+}
+* {box-sizing:border-box;scroll-behavior:smooth}
+body {
+  margin:0;
+  background:var(--bg);
+  color:white;
+  font-family:Arial,Helvetica,sans-serif;
+}
+header {
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#090c19ed;
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #ffffff20;
+  padding:17px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
+}
+.logo {
+  font-weight:900;
+  font-size:21px;
+  letter-spacing:1px;
+}
+.logo span {color:var(--cyan)}
+nav {display:flex;gap:17px;flex-wrap:wrap}
+nav a {
+  color:white;
+  text-decoration:none;
+  font-size:13px;
+}
+nav a:hover {color:var(--pink)}
+button,.btn {
+  background:linear-gradient(90deg,var(--pink),#a65cff);
+  color:white;
+  border:0;
+  padding:12px 18px;
+  border-radius:9px;
+  cursor:pointer;
+  font-weight:bold;
+}
+button:hover,.btn:hover {filter:brightness(1.15)}
+.hero {
+  min-height:490px;
+  padding:95px 7%;
+  background:
+    linear-gradient(90deg,#090b18ee,#090b1880),
+    radial-gradient(ellipse at 80% 25%,#a52e85 0%,transparent 38%),
+    radial-gradient(ellipse at 20% 90%,#087b83 0%,transparent 45%),
+    linear-gradient(135deg,#171b42,#30183c);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.eyebrow {
+  color:var(--cyan);
+  letter-spacing:4px;
+  font-size:12px;
+  font-weight:bold;
+}
+h1 {
+  font-size:clamp(44px,8vw,88px);
+  line-height:.95;
+  margin:20px 0;
+  background:linear-gradient(90deg,#fff,var(--pink),var(--cyan));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.hero p {
+  max-width:620px;
+  color:#d4d8e7;
+  font-size:18px;
+  line-height:1.6;
+}
+.searchbar {
+  display:flex;
+  gap:10px;
+  max-width:620px;
+  margin-top:20px;
+}
+input,textarea {
+  background:#11172a;
+  color:white;
+  border:1px solid #ffffff30;
+  padding:14px;
+  border-radius:9px;
+  font:inherit;
+  width:100%;
+}
+.searchbar input {flex:1}
+main {padding:35px 7% 75px}
+section {margin-bottom:65px;scroll-margin-top:100px}
+.section-title {margin-bottom:22px}
+.section-title h2 {font-size:30px;margin:0 0 8px}
+.section-title p {color:var(--muted);margin:0}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:17px;
+}
+.card {
+  background:linear-gradient(145deg,#1b213b,#111629);
+  border:1px solid #ffffff1d;
+  border-radius:15px;
+  padding:23px;
+  transition:.2s;
+}
+.card:hover {
+  transform:translateY(-4px);
+  border-color:#ff4fa388;
+}
+.card h3 {margin-top:8px;color:#fff}
+.card p {color:var(--muted);line-height:1.6}
+.tag {
+  color:var(--cyan);
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+.mapbox {
+  background:
+    radial-gradient(ellipse at 50% 50%,#327c68,#174b50 55%,#142b46);
+  border:2px solid var(--cyan);
+  border-radius:18px;
+  padding:30px 18px;
+  text-align:center;
+  overflow:hidden;
+}
+.mapbox h3 {color:var(--cyan);letter-spacing:3px}
+.mapbuttons {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:25px 0;
+}
+.mapbuttons button {
+  background:#101c30;
+  border:1px solid var(--cyan);
+}
+#placeInfo {
+  background:#101629;
+  border:1px solid #ffffff30;
+  border-radius:12px;
+  padding:18px;
+  max-width:650px;
+  margin:20px auto 0;
+  text-align:left;
+}
+.notice {
+  border-left:3px solid var(--cyan);
+  background:#43eee00c;
+  color:#c5cde0;
+  padding:15px;
+  border-radius:7px;
+  line-height:1.6;
+  margin-top:20px;
+}
+form {
+  display:grid;
+  gap:12px;
+  max-width:650px;
+}
+textarea {min-height:120px;resize:vertical}
+footer {
+  background:#101426;
+  border-top:1px solid #ffffff20;
+  padding:30px 7%;
+  color:#9da6bd;
+  line-height:1.7;
+}
+footer strong {color:white}
+.hidden {display:none!important}
+.language-button {
+  background:#16283b;
+  border:1px solid var(--cyan);
+}
+@media(max-width:650px) {
+  header {align-items:flex-start;flex-direction:column}
+  nav {gap:12px}
+  .hero {padding:70px 7%}
+  .searchbar {flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">GTA 6 <span>ONLINE HUB</span></div>
+
+  <nav>
+    <a href="#home" data-de="Startseite" data-en="Home">Startseite</a>
+    <a href="#secrets" data-de="Geheimnisse" data-en="Secrets">Geheimnisse</a>
+    <a href="#guides" data-de="Guides" data-en="Guides">Guides</a>
+    <a href="#map" data-de="Karte" data-en="Map">Karte</a>
+    <a href="#news" data-de="News" data-en="News">News</a>
+    <a href="#community" data-de="Community" data-en="Community">Community</a>
+  </nav>
+
+  <button class="language-button" onclick="toggleLanguage()" id="langButton">
+    EN / DE
+  </button>
+</header>
+
+<section class="hero" id="home">
+  <div class="eyebrow">VICE CITY • COMMUNITY • DISCOVERY</div>
+
+  <h1>WELCOME TO<br>GTA 6 ONLINE HUB</h1>
+
+  <p data-de="Deine zentrale Anlaufstelle für Geheimnisse, Easter Eggs, Guides, Karten und alles rund um GTA 6."
+     data-en="Your central hub for secrets, Easter eggs, guides, maps and everything about GTA 6.">
+    Deine zentrale Anlaufstelle für Geheimnisse, Easter Eggs, Guides, Karten und alles rund um GTA 6.
+  </p>
+
+  <div class="searchbar">
+    <input id="searchInput"
+      placeholder="Website durchsuchen..."
+      data-placeholder-de="Website durchsuchen..."
+      data-placeholder-en="Search the website...">
+    <button onclick="searchWebsite()" data-de="Suchen" data-en="Search">Suchen</button>
+  </div>
+</section>
+
+<main>
+
+<section id="secrets">
+  <div class="section-title">
+    <h2 data-de="🔎 Geheimnisse & Easter Eggs"
+        data-en="🔎 Secrets & Easter Eggs">🔎 Geheimnisse & Easter Eggs</h2>
+    <p data-de="Entdecke besondere Details und sammle interessante Entdeckungen."
+       data-en="Discover special details and collect interesting discoveries.">
+       Entdecke besondere Details und sammle interessante Entdeckungen.
+    </p>
+  </div>
+
+  <div class="grid searchable">
+    <article class="card">
+      <span class="tag">SECRETS</span>
+      <h3 data-de="Versteckte Orte" data-en="Hidden Places">Versteckte Orte</h3>
+      <p data-de="Hier werden später bestätigte und dokumentierte Fundorte gesammelt."
+         data-en="Confirmed and documented locations can be collected here later.">
+         Hier werden später bestätigte und dokumentierte Fundorte gesammelt.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="tag">EASTER EGGS</span>
+      <h3 data-de="Mysteriöse Hinweise" data-en="Mysterious Clues">Mysteriöse Hinweise</h3>
+      <p data-de="Interessante Hinweise, Rätsel und besondere Details."
+         data-en="Interesting clues, puzzles and special details.">
+         Interessante Hinweise, Rätsel und besondere Details.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="tag">DISCOVERIES</span>
+      <h3 data-de="Community-Funde" data-en="Community Finds">Community-Funde</h3>
+      <p data-de="Ein Platz für Entdeckungen aus der Community."
+         data-en="A place for discoveries from the community.">
+         Ein Platz für Entdeckungen aus der Community.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="guides">
+  <div class="section-title">
+    <h2 data-de="📚 Guides & Tipps" data-en="📚 Guides & Tips">📚 Guides & Tipps</h2>
+    <p data-de="Hilfreiche Anleitungen und Erklärungen."
+       data-en="Helpful tutorials and explanations.">
+       Hilfreiche Anleitungen und Erklärungen.
+    </p>
+  </div>
+
+  <div class="grid searchable">
+    <article class="card">
+      <span class="tag">BEGINNER</span>
+      <h3 data-de="Anfänger-Guide" data-en="Beginner Guide">Anfänger-Guide</h3>
+      <p data-de="Ein Bereich für Einsteiger und grundlegende Fragen."
+         data-en="A section for beginners and basic questions.">
+         Ein Bereich für Einsteiger und grundlegende Fragen.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="tag">TIPS</span>
+      <h3 data-de="Tipps & Tricks" data-en="Tips & Tricks">Tipps & Tricks</h3>
+      <p data-de="Nützliche Hinweise und Spieltipps."
+         data-en="Useful hints and gameplay tips.">
+         Nützliche Hinweise und Spieltipps.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="tag">FAQ</span>
+      <h3 data-de="Häufige Fragen" data-en="Frequently Asked Questions">Häufige Fragen</h3>
+      <p data-de="Antworten auf häufig gestellte Fragen."
+         data-en="Answers to frequently asked questions.">
+         Antworten auf häufig gestellte Fragen.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="map">
+  <div class="section-title">
+    <h2 data-de="🗺️ Entdeckerkarte" data-en="🗺️ Explorer Map">🗺️ Entdeckerkarte</h2>
+    <p data-de="Klicke auf einen Bereich, um Informationen zu sehen."
+       data-en="Click a region to see information.">
+       Klicke auf einen Bereich, um Informationen zu sehen.
+    </p>
+  </div>
+
+  <div class="mapbox">
+    <h3>VICE CITY REGION</h3>
+    <p data-de="DEMO-KARTE – REGIONEN ZUM AUSWÄHLEN"
+       data-en="DEMO MAP – SELECT A REGION">
+       DEMO-KARTE – REGIONEN ZUM AUSWÄHLEN
+    </p>
+
+    <div class="mapbuttons">
+      <button onclick="showPlace('city')" data-de="📍 Vice City" data-en="📍 Vice City">📍 Vice City</button>
+      <button onclick="showPlace('beach')" data-de="🏖️ Strand" data-en="🏖️ Beach">🏖️ Strand</button>
+      <button onclick="showPlace('country')" data-de="🌴 Landgebiet" data-en="🌴 Countryside">🌴 Landgebiet</button>
+      <button onclick="showPlace('harbor')" data-de="⚓ Hafen" data-en="⚓ Harbor">⚓ Hafen</button>
+    </div>
+
+    <div id="placeInfo">
+      <h3 data-de="Wähle einen Ort" data-en="Choose a location">Wähle einen Ort</h3>
+      <p data-de="Hier erscheinen die Informationen."
+         data-en="Location information will appear here.">
+         Hier erscheinen die Informationen.
+      </p>
+    </div>
+  </div>
+
+  <div class="notice"
+       data-de="Wichtig: Dies ist eine gestaltete Demo-Karte und keine echte oder maßstabsgetreue Spielkarte. Tatsächliche Fundorte müssen noch überprüft werden."
+       data-en="Important: This is a designed demo map, not an actual or to-scale game map. Real locations still need verification.">
+    Wichtig: Dies ist eine gestaltete Demo-Karte und keine echte oder maßstabsgetreue Spielkarte. Tatsächliche Fundorte müssen noch überprüft werden.
+  </div>
+</section>
+
+<section id="news">
+  <div class="section-title">
+    <h2 data-de="📰 News & Updates" data-en="📰 News & Updates">📰 News & Updates</h2>
+    <p data-de="Hier können später bestätigte Neuigkeiten erscheinen."
+       data-en="Verified news can be published here later.">
+       Hier können später bestätigte Neuigkeiten erscheinen.
+    </p>
+  </div>
+
+  <div class="grid searchable">
+    <article class="card">
+      <span class="tag">NEWS</span>
+      <h3 data-de="Willkommen im Hub!" data-en="Welcome to the Hub!">Willkommen im Hub!</h3>
+      <p data-de="Der GTA 6 Online Hub ist gestartet. Weitere Inhalte folgen."
+         data-en="The GTA 6 Online Hub has started. More content is coming.">
+         Der GTA 6 Online Hub ist gestartet. Weitere Inhalte folgen.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="tag">UPDATES</span>
+      <h3 data-de="Weitere Inhalte geplant" data-en="More Content Planned">Weitere Inhalte geplant</h3>
+      <p data-de="Neue Guides, Entdeckungen und Community-Funktionen sind geplant."
+         data-en="New guides, discoveries and community features are planned.">
+         Neue Guides, Entdeckungen und Community-Funktionen sind geplant.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="community">
+  <div class="section-title">
+    <h2 data-de="👥 Community & Entdeckungen"
+        data-en="👥 Community & Discoveries">👥 Community & Entdeckungen</h2>
+    <p data-de="Schicke einen Vorschlag für einen neuen Beitrag."
+       data-en="Send a suggestion for a new post.">
+       Schicke einen Vorschlag für einen neuen Beitrag.
+    </p>
+  </div>
+
+  <form id="communityForm">
+    <input id="visitorName" required
+      placeholder="Dein Name / Your name">
+    <input id="visitorTitle" required
+      placeholder="Titel / Title">
+    <textarea id="visitorMessage" required
+      placeholder="Deine Entdeckung oder Idee / Your discovery or idea"></textarea>
+    <button type="submit"
+      data-de="Vorschlag speichern"
+      data-en="Save suggestion">Vorschlag speichern</button>
+  </form>
+
+  <div id="formResult" class="notice" style="display:none"></div>
+
+  <h3 data-de="Deine gespeicherten Vorschläge"
+      data-en="Your saved suggestions">Deine gespeicherten Vorschläge</h3>
+  <div id="submissions" class="grid"></div>
+
+  <div class="notice"
+       data-de="Die Vorschläge werden nur lokal in diesem Browser gespeichert. Andere Besucher können sie noch nicht sehen. Für eine öffentliche Community brauchen wir später eine Datenbank."
+       data-en="Suggestions are stored locally in this browser only. Other visitors cannot see them yet. A database is needed for a public community.">
+    Die Vorschläge werden nur lokal in diesem Browser gespeichert. Andere Besucher können sie noch nicht sehen. Für eine öffentliche Community brauchen wir später eine Datenbank.
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-title">
+    <h2 data-de="Über den GTA 6 Online Hub"
+        data-en="About GTA 6 Online Hub">Über den GTA 6 Online Hub</h2>
+  </div>
+  <p style="color:var(--muted);line-height:1.8;max-width:750px"
+     data-de="Dies ist ein unabhängiges Fanprojekt. Es steht in keiner Verbindung zu Rockstar Games. Grand Theft Auto und zugehörige Marken gehören ihren jeweiligen Rechteinhabern. Inhalte auf dieser Website müssen vor Veröffentlichung auf Richtigkeit geprüft werden."
+     data-en="This is an independent fan project and is not affiliated with Rockstar Games. Grand Theft Auto and related trademarks belong to their respective owners. Website content should be checked for accuracy before publication.">
+    Dies ist ein unabhängiges Fanprojekt. Es steht in keiner Verbindung zu Rockstar Games. Grand Theft Auto und zugehörige Marken gehören ihren jeweiligen Rechteinhabern. Inhalte auf dieser Website müssen vor Veröffentlichung auf Richtigkeit geprüft werden.
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <strong>GTA 6 ONLINE HUB</strong><br>
+  Independent Fan Project • Unabhängiges Fanprojekt<br>
+  Not affiliated with Rockstar Games.
+</footer>
+
+<script>
+let currentLanguage = "de";
+
+const places = {
+  city: {
+    de:["Vice City","Stadtbereich – hier können später geprüfte Orte und Entdeckungen gesammelt werden."],
+    en:["Vice City","City region – verified locations and discoveries can be collected here later."]
+  },
+  beach: {
+    de:["Strand","Küstenbereich – Platz für besondere Schauplätze und Entdeckungen."],
+    en:["Beach","Coastal region – a place for interesting locations and discoveries."]
+  },
+  country: {
+    de:["Landgebiet","Ländliche Region – hier können später interessante Fundorte eingetragen werden."],
+    en:["Countryside","Rural region – interesting locations can be added here later."]
+  },
+  harbor: {
+    de:["Hafen","Hafenbereich – ein Platz für bestätigte Entdeckungen."],
+    en:["Harbor","Harbor region – a place for verified discoveries."]
+  }
+};
+
+function showPlace(place) {
+  const info = places[place][currentLanguage];
+  document.getElementById("placeInfo").innerHTML =
+    "<h3>📍 " + info[0] + "</h3><p>" + info[1] + "</p>";
+}
+
+function toggleLanguage() {
+  currentLanguage = currentLanguage === "de" ? "en" : "de";
+  document.documentElement.lang = currentLanguage;
+
+  document.querySelectorAll("[data-de][data-en]").forEach(el => {
+    el.textContent = el.getAttribute("data-" + currentLanguage);
+  });
+
+  document.querySelectorAll("[data-placeholder-de]").forEach(el => {
+    el.placeholder = el.getAttribute("data-placeholder-" + currentLanguage);
+  });
+
+  document.getElementById("langButton").textContent =
+    currentLanguage === "de" ? "EN / DE" : "DE / EN";
+
+  document.getElementById("placeInfo").innerHTML =
+    currentLanguage === "de"
+    ? "<h3>Wähle einen Ort</h3><p>Hier erscheinen die Informationen.</p>"
+    : "<h3>Choose a location</h3><p>Information will appear here.</p>";
+}
+
+function searchWebsite() {
+  const query = document.getElementById("searchInput").value.toLowerCase().trim();
+  const cards = document.querySelectorAll(".searchable .card");
+  let count = 0;
+
+  cards.forEach(card => {
+    const match = card.innerText.toLowerCase().includes(query);
+    card.classList.toggle("hidden", query !== "" && !match);
+    if (query === "" || match) count++;
+  });
+
+  if (count === 0) {
+    alert(currentLanguage === "de"
+      ? "Keine passenden Inhalte gefunden."
+      : "No matching content found.");
+  }
+}
+
+document.getElementById("searchInput").addEventListener("keydown", e => {
+  if (e.key === "Enter") searchWebsite();
+});
+
+function getSubmissions() {
+  try {
+    return JSON.parse(localStorage.getItem("gtaHubSubmissions") || "[]");
+  } catch (error) {
+    return [];
+  }
+}
+
+function renderSubmissions() {
+  const container = document.getElementById("submissions");
+  container.innerHTML = "";
+
+  getSubmissions().forEach(item => {
+    const card = document.createElement("article");
+    card.className = "card";
+
+    const title = document.createElement("h3");
+    title.textContent = item.title;
+
+    const author = document.createElement("small");
+    author.textContent = "Von: " + item.name;
+
+    const message = document.createElement("p");
+    message.textContent = item.message;
+
+    card.append(title, author, message);
+    container.appendChild(card);
+  });
+}
+
+document.getElementById("communityForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("visitorName").value.trim();
+  const title = document.getElementById("visitorTitle").value.trim();
+  const message = document.getElementById("visitorMessage").value.trim();
+
+  if (!name || !title || !message) return;
+
+  const submissions = getSubmissions();
+  submissions.unshift({name,title,message});
+
+  try {
+    localStorage.setItem("gtaHubSubmissions", JSON.stringify(submissions));
+    document.getElementById("formResult").style.display = "block";
+    document.getElementById("formResult").textContent =
+      currentLanguage === "de"
+      ? "Dein Vorschlag wurde auf diesem Gerät gespeichert!"
+      : "Your suggestion was saved on this device!";
+
+    this.reset();
+    renderSubmissions();
+  } catch (error) {
+    alert("Speichern war nicht möglich. Bitte prüfe deine Browser-Einstellungen.");
+  }
+});
+
+renderSubmissions();
+</script>
+
+</body>
+</html>
